@@ -80,8 +80,8 @@ export async function createInvoice(prevState: State, formData: FormData) {
   } catch (err) {
     return { error: "Database Error: Failed to Create Invoice." };
   }
-  revalidatePath("/dashboard/invoices");
-  redirect("/dashboard/invoices");
+  revalidatePath("/home/courses");
+  redirect("/home/courses");
 }
 
 const UpdateInvoice = InvoiceSchema.omit({ date: true });
@@ -128,8 +128,8 @@ export async function updateInvoice(formData: FormData) {
   } catch (err) {
     return { error: "Database Error: Failed to Update Invoice." };
   }
-  revalidatePath("/dashboard/invoices");
-  redirect("/dashboard/invoices");
+  revalidatePath("/home/courses");
+  redirect("/home/courses");
 }
 
 export async function deleteInvoice(id: string) {
@@ -151,5 +151,5 @@ export async function deleteInvoice(id: string) {
   } catch (err) {
     return { error: "Database Error: Failed to Delete Invoice." };
   }
-  revalidatePath("/dashboard/invoices");
+  revalidatePath("/home/courses");
 }

@@ -48,5 +48,5 @@ export async function registerAction(prevState: any, formData: any) {
     console.log(error);
     return { error: "Server error please try again later." };
   }
-  redirect("/dashboard");
+  redirect("/home");
 }
