@@ -7,11 +7,11 @@ export function middleware(request: NextRequest) {
   
   const currentPath = request.nextUrl.pathname;
 
-  if (currentPath === '/dashboard' && cookie === undefined) {
+  if (currentPath === '/home' && cookie === undefined) {
     return NextResponse.redirect(new URL('/login', request.url))
   }
 
-  if (currentPath === '/dashboard/invoices' && cookie === undefined) {
+  if (currentPath === '/home/courses' && cookie === undefined) {
     return NextResponse.redirect(new URL('/login', request.url))
   }
 

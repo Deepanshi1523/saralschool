@@ -1,0 +1,63 @@
+{
+  "kind": "collectionType",
+  "collectionName": "courses",
+  "info": {
+    "singularName": "course",
+    "pluralName": "courses",
+    "displayName": "Courses",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "Student_per_batch": {
+      "type": "integer",
+      "default": 15,
+      "required": true
+    },
+    "rating": {
+      "type": "float",
+      "default": 5,
+      "required": true
+    },
+    "cost": {
+      "type": "biginteger",
+      "required": true
+    },
+    "numberOfClasses": {
+      "type": "integer",
+      "required": true
+    },
+    "total_student": {
+      "type": "biginteger",
+      "required": true
+    },
+    "isHeroCourse": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "users": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "courses"
+    },
+    "Course_pic": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

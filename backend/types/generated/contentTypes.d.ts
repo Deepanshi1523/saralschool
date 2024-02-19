@@ -587,7 +587,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
   options: {
     draftAndPublish: false;
-    timestamps: true;
   };
   attributes: {
     username: Attribute.String &
@@ -615,6 +614,11 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'plugin::users-permissions.user',
       'manyToOne',
       'plugin::users-permissions.role'
+    >;
+    courses: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'manyToMany',
+      'api::course.course'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -670,6 +674,53 @@ export interface PluginI18NLocale extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'plugin::i18n.locale',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiCourseCourse extends Schema.CollectionType {
+  collectionName: 'courses';
+  info: {
+    singularName: 'course';
+    pluralName: 'courses';
+    displayName: 'Courses';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.Required & Attribute.Unique;
+    Student_per_batch: Attribute.Integer &
+      Attribute.Required &
+      Attribute.DefaultTo<15>;
+    rating: Attribute.Float & Attribute.Required & Attribute.DefaultTo<5>;
+    cost: Attribute.BigInteger & Attribute.Required;
+    numberOfClasses: Attribute.Integer & Attribute.Required;
+    total_student: Attribute.BigInteger & Attribute.Required;
+    isHeroCourse: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<false>;
+    users: Attribute.Relation<
+      'api::course.course',
+      'manyToMany',
+      'plugin::users-permissions.user'
+    >;
+    Course_pic: Attribute.Media & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::course.course',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::course.course',
       'oneToOne',
       'admin::user'
     > &
@@ -794,6 +845,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::course.course': ApiCourseCourse;
       'api::customer.customer': ApiCustomerCustomer;
       'api::invoice.invoice': ApiInvoiceInvoice;
       'api::revenue.revenue': ApiRevenueRevenue;
