@@ -6,7 +6,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <div className="flex-none ">
         <SideNav />
       </div>
-      <div className="pt-24 pl-6">{children}</div>
+      <div className="pt-24 px-6">{children}</div>
     </div>
   );
 }
