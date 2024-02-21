@@ -37,12 +37,12 @@ export default function Page() {
         </div>
         </div>
         <div className="flex justify-center md:w-3/5 md:px-28">
-        <Image
-            src="/bg1.png"
-            width={400}
-            height={400}
-            className="hidden md:block"
-            alt="Screenshots of the dashboard project showing desktop and mobile versions"
+          <Image
+              src="/bg1.png"
+              width={400}
+              height={400}
+              className="hidden md:block"
+              alt="Screenshots of the dashboard project showing desktop and mobile versions"
           />
         </div>
       </div>

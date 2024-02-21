@@ -7,7 +7,7 @@ import NavLinks from '@/app/ui/dashboard/nav-links';
 
 export default function SideNav() {
   return (
-    <nav className="bg-white py-1 px-5 mb-10 md:py-2 md:px-2 flex-col items-center justify-between fixed top-0 w-full z-10">
+    <nav className="bg-white py-1 px-5  md:py-2 md:px-2 flex-col items-center justify-between fixed top-0 w-full z-10">
       <div className="flex items-center space-x-10">
         <Link href="/">
           <div className="mr-4">
@@ -26,7 +26,7 @@ export default function SideNav() {
             await logoutAction();
           }}
         >
-          <button className="flex h-[42px] grow items-center justify-center gap-2 rounded-md p-3 text-lg font-large hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3">
+          <button className="flex h-[42px] grow items-center justify-center gap-2 rounded-md p-3 text-lg font-large hover:text-red-600 md:flex-none md:justify-start md:p-2 md:px-3">
             <PowerIcon className="w-6" />
             <span className="md:block">Sign Out</span>
           </button>
