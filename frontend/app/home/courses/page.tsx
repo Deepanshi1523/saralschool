@@ -19,7 +19,7 @@ export default async function Page({
   const { data: invoices , meta } = await fetchFilteredInvoices(query, currentPage);
   return (
     <div className="w-full">
-      <div className="mt-4 flex items-center justify-between gap-2 md:mt-8">
+      <div className="mt-4 flex items-center justify-between">
         <Search placeholder="Search courses..." />
       </div>
       <Suspense key={query + currentPage} fallback={<InvoicesTableSkeleton />}>
