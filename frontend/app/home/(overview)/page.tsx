@@ -7,7 +7,6 @@ import {
   LatestInvoicesSkeleton,
   CardsSkeleton,
 } from "@/app/ui/dashboard/skeletons";
-import { lusitana } from "@/app/ui/fonts";
 
 export default async function Page() {
   return (

@@ -163,7 +163,7 @@ export function InvoicesMobileSkeleton() {
   );
 }
 
-export function InvoicesTableSkeleton() {
+export function CoursesTableSkeleton() {
   return (
     <div className="mt-6 flow-root">
       <div className="inline-block min-w-full align-middle">
@@ -194,11 +194,8 @@ export function InvoicesTableSkeleton() {
                 <th scope="col" className="px-3 py-5 font-medium">
                   Total Classes
                 </th>
-                <th
-                  scope="col"
-                  className="relative pb-4 pl-3 pr-6 pt-2 sm:pr-6"
-                >
-                  <span className="sr-only">Total students</span>
+                <th scope="col" className="px-3 py-5 font-medium">
+                  Total students
                 </th>
               </tr>
             </thead>

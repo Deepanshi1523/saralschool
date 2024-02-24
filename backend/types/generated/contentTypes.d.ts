@@ -362,154 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiCourseCourse extends Schema.CollectionType {
-  collectionName: 'courses';
-  info: {
-    singularName: 'course';
-    pluralName: 'courses';
-    displayName: 'Courses';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Title: Attribute.String & Attribute.Required & Attribute.Unique;
-    Student_per_batch: Attribute.Integer &
-      Attribute.Required &
-      Attribute.DefaultTo<15>;
-    rating: Attribute.Float & Attribute.Required & Attribute.DefaultTo<5>;
-    cost: Attribute.BigInteger & Attribute.Required;
-    numberOfClasses: Attribute.Integer & Attribute.Required;
-    total_student: Attribute.BigInteger & Attribute.Required;
-    isHeroCourse: Attribute.Boolean &
-      Attribute.Required &
-      Attribute.DefaultTo<false>;
-    users: Attribute.Relation<
-      'api::course.course',
-      'manyToMany',
-      'plugin::users-permissions.user'
-    >;
-    Course_pic: Attribute.Media & Attribute.Required;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::course.course',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::course.course',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiCustomerCustomer extends Schema.CollectionType {
-  collectionName: 'customers';
-  info: {
-    singularName: 'customer';
-    pluralName: 'customers';
-    displayName: 'Customer';
-    description: '';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    name: Attribute.String;
-    email: Attribute.String;
-    image: Attribute.Media;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::customer.customer',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::customer.customer',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiInvoiceInvoice extends Schema.CollectionType {
-  collectionName: 'invoices';
-  info: {
-    singularName: 'invoice';
-    pluralName: 'invoices';
-    displayName: 'Invoice';
-    description: '';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    customer: Attribute.Relation<
-      'api::invoice.invoice',
-      'oneToOne',
-      'api::customer.customer'
-    >;
-    amount: Attribute.Integer;
-    status: Attribute.Enumeration<['pending', 'paid']>;
-    date: Attribute.Date;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::invoice.invoice',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::invoice.invoice',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiRevenueRevenue extends Schema.CollectionType {
-  collectionName: 'revenues';
-  info: {
-    singularName: 'revenue';
-    pluralName: 'revenues';
-    displayName: 'Revenue';
-    description: '';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    date: Attribute.Date;
-    month: Attribute.String;
-    revenue: Attribute.Integer;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::revenue.revenue',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::revenue.revenue',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -829,6 +681,154 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiCourseCourse extends Schema.CollectionType {
+  collectionName: 'courses';
+  info: {
+    singularName: 'course';
+    pluralName: 'courses';
+    displayName: 'Courses';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.Required & Attribute.Unique;
+    Student_per_batch: Attribute.Integer &
+      Attribute.Required &
+      Attribute.DefaultTo<15>;
+    rating: Attribute.Float & Attribute.Required & Attribute.DefaultTo<5>;
+    cost: Attribute.BigInteger & Attribute.Required;
+    numberOfClasses: Attribute.Integer & Attribute.Required;
+    total_student: Attribute.BigInteger & Attribute.Required;
+    isHeroCourse: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<false>;
+    users: Attribute.Relation<
+      'api::course.course',
+      'manyToMany',
+      'plugin::users-permissions.user'
+    >;
+    Course_pic: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::course.course',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::course.course',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiCustomerCustomer extends Schema.CollectionType {
+  collectionName: 'customers';
+  info: {
+    singularName: 'customer';
+    pluralName: 'customers';
+    displayName: 'Customer';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    name: Attribute.String;
+    email: Attribute.String;
+    image: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::customer.customer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::customer.customer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiInvoiceInvoice extends Schema.CollectionType {
+  collectionName: 'invoices';
+  info: {
+    singularName: 'invoice';
+    pluralName: 'invoices';
+    displayName: 'Invoice';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    customer: Attribute.Relation<
+      'api::invoice.invoice',
+      'oneToOne',
+      'api::customer.customer'
+    >;
+    amount: Attribute.Integer;
+    status: Attribute.Enumeration<['pending', 'paid']>;
+    date: Attribute.Date;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::invoice.invoice',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::invoice.invoice',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiRevenueRevenue extends Schema.CollectionType {
+  collectionName: 'revenues';
+  info: {
+    singularName: 'revenue';
+    pluralName: 'revenues';
+    displayName: 'Revenue';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    date: Attribute.Date;
+    month: Attribute.String;
+    revenue: Attribute.Integer;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::revenue.revenue',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::revenue.revenue',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -839,16 +839,16 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::course.course': ApiCourseCourse;
-      'api::customer.customer': ApiCustomerCustomer;
-      'api::invoice.invoice': ApiInvoiceInvoice;
-      'api::revenue.revenue': ApiRevenueRevenue;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::course.course': ApiCourseCourse;
+      'api::customer.customer': ApiCustomerCustomer;
+      'api::invoice.invoice': ApiInvoiceInvoice;
+      'api::revenue.revenue': ApiRevenueRevenue;
     }
   }
 }
