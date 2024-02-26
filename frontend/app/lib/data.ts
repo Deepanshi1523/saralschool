@@ -142,23 +142,11 @@ export async function fetchCourses(
 
   const queryObject = qs.stringify({
     sort: ["rating:desc"],
-
-    filters: {
-      $or: [
-        {
-          Title: {
-            $contains: query,
-          },
-        },
-        {
-          Course_pic: {
-            $contains: query,
-          },
-        },
-      ],
+    populate: {
+      fields: ["title", "cost"],
     },
-
   });
+  
 
   try {
     const response = await fetch(STRAPI_URL + "/api/courses?" + queryObject, {

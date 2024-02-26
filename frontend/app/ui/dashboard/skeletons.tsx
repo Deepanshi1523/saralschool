@@ -112,28 +112,17 @@ export function TableRowSkeleton() {
           <div className="h-6 w-24 rounded bg-gray-100"></div>
         </div>
       </td>
-      {/* Email */}
+      {/* Student per batch */}
       <td className="whitespace-nowrap px-3 py-3">
         <div className="h-6 w-32 rounded bg-gray-100"></div>
       </td>
-      {/* Amount */}
+      {/* cost */}
       <td className="whitespace-nowrap px-3 py-3">
         <div className="h-6 w-16 rounded bg-gray-100"></div>
       </td>
-      {/* Date */}
+      {/* rating */}
       <td className="whitespace-nowrap px-3 py-3">
         <div className="h-6 w-16 rounded bg-gray-100"></div>
-      </td>
-      {/* Status */}
-      <td className="whitespace-nowrap px-3 py-3">
-        <div className="h-6 w-16 rounded bg-gray-100"></div>
-      </td>
-      {/* Actions */}
-      <td className="whitespace-nowrap py-3 pl-6 pr-3">
-        <div className="flex justify-end gap-3">
-          <div className="h-[38px] w-[38px] rounded bg-gray-100"></div>
-          <div className="h-[38px] w-[38px] rounded bg-gray-100"></div>
-        </div>
       </td>
     </tr>
   );

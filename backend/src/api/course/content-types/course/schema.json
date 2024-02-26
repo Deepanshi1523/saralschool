@@ -44,19 +44,15 @@
       "default": false,
       "required": true
     },
-    "users": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "plugin::users-permissions.user",
-      "mappedBy": "courses"
-    },
-    "Course_pic": {
+    "img": {
       "type": "media",
-      "multiple": false,
-      "required": false,
+      "multiple": true,
+      "required": true,
       "allowedTypes": [
         "images",
-        "files"
+        "files",
+        "videos",
+        "audios"
       ]
     }
   }
