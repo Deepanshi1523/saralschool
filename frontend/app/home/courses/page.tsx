@@ -1,11 +1,8 @@
-import { fetchFilteredInvoices } from "@/app/lib/data";
 import { fetchCourses } from "@/app/lib/data";
-import Pagination from "@/app/ui/invoices/pagination";
 import Search from "@/app/ui/search";
 import Table from "@/app/ui/invoices/table";
 import { CoursesTableSkeleton} from "@/app/ui/dashboard/skeletons";
 import { Suspense } from "react";
-import { formatDateToLocal, formatCurrency } from "@/app/lib/utils";
 
 export default async function Page({
   searchParams,

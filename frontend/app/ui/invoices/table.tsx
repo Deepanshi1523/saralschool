@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { formatDateToLocal, formatCurrency } from "@/app/lib/utils";
+import { formatCurrency } from "@/app/lib/utils";
 
 export default async function InvoicesTable({
   courses,
@@ -21,13 +21,13 @@ export default async function InvoicesTable({
                     <div>
                       <div className="mb-2 flex items-center">
                         <Image
-                            src={"http://localhost:1337" + course.img.url}
+                            src={"http://localhost:1337" + course.image.url}
                             className="mr-2 rounded-full"
                             width={28}
                             height={28}
                             alt="Course Image"
                         />
-                        <p>{course.title}</p>
+                        <p>{course.Title}</p>
                       </div>
                       <p className="text-sm text-gray-500">{course.Student_per_batch}</p>
                     </div>
@@ -72,14 +72,14 @@ export default async function InvoicesTable({
                     <div className="flex items-center gap-3">
                       <Image
                         src={
-                          "http://localhost:1337" + course.img.url
+                          "http://localhost:1337" + course.image.url
                         }
                         className="rounded-full"
                         width={28}
                         height={28}
                         alt={`${course.title}'s profile picture`}
                       />
-                      <p>{course.title}</p>
+                      <p>{course.Title}</p>
                     </div>
                   </td>
                   <td className="whitespace-nowrap px-3 py-3">

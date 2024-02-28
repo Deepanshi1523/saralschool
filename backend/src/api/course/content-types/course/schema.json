@@ -44,15 +44,13 @@
       "default": false,
       "required": true
     },
-    "img": {
+    "image": {
       "type": "media",
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "allowedTypes": [
         "images",
-        "files",
-        "videos",
-        "audios"
+        "files"
       ]
     }
   }

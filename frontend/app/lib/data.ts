@@ -143,7 +143,9 @@ export async function fetchCourses(
   const queryObject = qs.stringify({
     sort: ["rating:desc"],
     populate: {
-      fields: ["title", "cost"],
+      image: {
+        fields: ["url"],
+      },
     },
   });
   
