@@ -9,8 +9,8 @@ export default async function InvoicesTable({
   return (
     <div className="mt-6 flow-root">
       <div className="inline-block min-w-full align-middle">
-        <div className="rounded-lg bg-gray-50 p-2 md:pt-0">
-          <div className="md:hidden">
+        <div className="pt-2 md:pt-0 flex flex-wrap items-start" style={{backgroundColor:"#e8e7f3"}}>
+          {/* <div className="md:hidden">
             {courses?.map((course: any) => {
               return (
                 <div
@@ -44,32 +44,14 @@ export default async function InvoicesTable({
                 </div>
               );
             })}
-          </div>
-          <table className="hidden min-w-full text-gray-900 md:table">
-            <thead className="rounded-lg text-left text-sm font-normal">
-              <tr>
-                <th scope="col" className="px-4 py-5 font-medium sm:pl-6">
-                  Course
-                </th>
-                <th scope="col" className="px-3 py-5 font-medium">
-                  Student per batch
-                </th>
-                <th scope="col" className="px-3 py-5 font-medium">
-                  Cost
-                </th>
-                <th scope="col" className="px-3 py-5 font-medium">
-                  Rating
-                </th>
-              </tr>
-            </thead>
-            <tbody className="bg-white">
+          </div> */}
               {courses?.map((course: any) => (
-                <tr
+                <div
                   key={course.id}
-                  className="w-full border-b py-3 text-sm last-of-type:border-none [&:first-child>td:first-child]:rounded-tl-lg [&:first-child>td:last-child]:rounded-tr-lg [&:last-child>td:first-child]:rounded-bl-lg [&:last-child>td:last-child]:rounded-br-lg"
+                  className="bg-white m-2 px-2 pt-3 shadow-courses rounded-2xl flex flex-col"
+                  style={{width: "350px"}}
                 >
-                  <td className="whitespace-nowrap py-3 pl-6 pr-3">
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center">
                       <Image
                         src={
                           "http://localhost:1337" + course.image.url
@@ -81,20 +63,17 @@ export default async function InvoicesTable({
                       />
                       <p>{course.Title}</p>
                     </div>
-                  </td>
-                  <td className="whitespace-nowrap px-3 py-3">
+                  <div className="whitespace-nowrap px-3 py-3">
                     {course.Student_per_batch}
-                  </td>
-                  <td className="whitespace-nowrap px-3 py-3">
+                  </div>
+                  <div className="whitespace-nowrap px-3 py-3">
                     {formatCurrency(course.cost)}
-                  </td>
-                  <td className="whitespace-nowrap px-3 py-3">
+                  </div>
+                  <div className="whitespace-nowrap px-3 py-3">
                     {course.rating}
-                  </td>
-                </tr>
+                  </div>
+                </div>
               ))}
-            </tbody>
-          </table>
         </div>
       </div>
     </div>

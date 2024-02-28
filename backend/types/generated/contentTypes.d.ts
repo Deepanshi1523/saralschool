@@ -685,7 +685,7 @@ export interface ApiCourseCourse extends Schema.CollectionType {
     description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     Title: Attribute.String & Attribute.Required & Attribute.Unique;
@@ -699,10 +699,9 @@ export interface ApiCourseCourse extends Schema.CollectionType {
     isHeroCourse: Attribute.Boolean &
       Attribute.Required &
       Attribute.DefaultTo<false>;
-    img: Attribute.Media & Attribute.Required;
+    image: Attribute.Media & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::course.course',
       'oneToOne',
