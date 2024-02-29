@@ -1,7 +1,7 @@
 import { fetchCourses } from "@/app/lib/data";
 import Search from "@/app/ui/search";
 import Table from "@/app/ui/invoices/table";
-import { CoursesTableSkeleton} from "@/app/ui/dashboard/skeletons";
+// import { CoursesTableSkeleton} from "@/app/ui/dashboard/skeletons";
 import { Suspense } from "react";
 
 export default async function Page({
@@ -19,9 +19,9 @@ export default async function Page({
       <div className="mt-4 flex items-center justify-between">
         <Search placeholder="Search courses..." />
       </div>
-      <Suspense key={query} fallback={<CoursesTableSkeleton/>}>
+      {/* <Suspense key={query} fallback={<CoursesTableSkeleton/>}> */}
         <Table courses={courses}/>
-      </Suspense>
+      {/* </Suspense> */}
     </div>
   );
 }
