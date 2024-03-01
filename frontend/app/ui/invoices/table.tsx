@@ -7,9 +7,9 @@ export default async function InvoicesTable({
   courses: object[];
 }) {
   return (
-    <div className="mt-4 flow-root">
+    <div className=" flow-root">
       <div className="inline-block min-w-full align-middle">
-        <div className="pt-1 md:pt-0 flex flex-wrap items-start justify-between ">
+        <div className="md:pt-0 flex flex-wrap items-start justify-between ">
           {/* <div className="md:hidden">
             {courses?.map((course: any) => {
               return (
@@ -48,7 +48,7 @@ export default async function InvoicesTable({
               {courses?.map((course: any) => (
                 <div
                   key={course.id}
-                  className="bg-white mb-10 px-2 pt-3 shadow-courses rounded-2xl flex flex-col relative shadow-xl"
+                  className="bg-white mb-10 px-2 shadow-courses rounded-2xl flex flex-col relative shadow-xl"
                   style={{width: "375px", height:"500px"}}
                 >
                     <div className="flex items-center">
