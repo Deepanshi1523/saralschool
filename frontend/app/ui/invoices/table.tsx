@@ -48,7 +48,7 @@ export default async function InvoicesTable({
               {courses?.map((course: any) => (
                 <div
                   key={course.id}
-                  className="bg-white m-2 px-2 pt-3 shadow-courses rounded-2xl flex flex-col relative shadow-lg"
+                  className="bg-white mb-10 px-2 pt-3 shadow-courses rounded-2xl flex flex-col relative shadow-xl"
                   style={{width: "375px", height:"500px"}}
                 >
                     <div className="flex items-center">
@@ -56,7 +56,7 @@ export default async function InvoicesTable({
                         src={
                           "http://localhost:1337" + course.image.url
                         }
-                        className="rounded-t-2xl pt-2"
+                        className="rounded-t-3xl pt-2"
                         width={375}
                         height={400}
                         alt={`${course.title}'s profile picture`}
