@@ -66,7 +66,8 @@ export default async function InvoicesTable({
                         Best Seller
                       </span>
                     </div>
-                    <div className="flex justify-between items-center pt-3">
+                  <div className="px-2">
+                    <div className="flex justify-between items-center pt-3" style={{height:"90px"}}>
                       <div style={{width:"200px"}}>
                         <p className="text-black font-bold text-lg">{course.Title}</p>
                         <div className="text-sm">
@@ -89,9 +90,41 @@ export default async function InvoicesTable({
                         </div>
                       </div>
                     </div>
-                    <div className="whitespace-nowrap px-3 py-3">
+                    <div className="flex py-5 text-xl font-bold items-center justify-between">
                       {formatCurrency(course.cost)}
+                      <button className="bg-blue-500 hover:bg-blue-700 text-sm text-white py-1 px-3 rounded-full w-30">
+                        Register Now
+                      </button>
                     </div>
+                    <div className="flex justify-around pb-5">
+                      <div className="flex">
+                        <Image
+                          src="https://edu.saralgroups.com/assets/courses/book-open.svg"
+                          className="mr-1"
+                          width={15}
+                          height={15}
+                          alt="book"
+                        />
+                        {course.numberOfClasses} classes
+                      </div>
+                      <div className="flex">
+                        <Image
+                          src="https://edu.saralgroups.com/assets/courses/users.svg"
+                          className="mr-1"
+                          width={15}
+                          height={15}
+                          alt="book"
+                        />
+                        {course.total_student} students
+                      </div>
+                    </div>
+                    <div className="w-full border-b mb-5"></div>
+                    <div className="flex justify-center">
+                      <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded w-80">
+                        Apply for Scholarship
+                      </button>
+                    </div>
+                  </div>
                 </div>
               ))}
         </div>
