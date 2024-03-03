@@ -163,6 +163,37 @@ export async function fetchCourses(
   }
 }
 
+export async function fetchMasterCourses(
+  query: string
+) {
+  const authToken = cookies().get("jwt")?.value;
+  if (!authToken) return redirect("/login");
+
+  noStore();
+
+  const queryObject = qs.stringify({
+    sort: ["rating:desc"],
+    populate: {
+      image: {
+        fields: ["url"],
+      },
+    },
+  });
+  
+
+  try {
+    const response = await fetch(STRAPI_URL + "/api/master-courses?" + queryObject, {
+      headers: { Authorization: "Bearer " + authToken },
+    });
+    const data = await response.json();
+    const flattened = flattenAttributes(data.data);
+    return { data: flattened};
+  } catch (error) {
+    console.error("Database Error:", error);
+    throw new Error("Failed to fetch invoices.");
+  }
+}
+
 const ITEMS_PER_PAGE = 6;
 export async function fetchFilteredInvoices(
   query: string,

@@ -1,6 +1,7 @@
 import { fetchCourses } from "@/app/lib/data";
-import Search from "@/app/ui/search";
+import { fetchMasterCourses } from "@/app/lib/data";
 import Table from "@/app/ui/invoices/table";
+import Master from "@/app/ui/invoices/master";
 
 export default async function Page({
   searchParams,
@@ -12,11 +13,10 @@ export default async function Page({
   const query = searchParams?.query || "";
 
   const { data: courses} = await fetchCourses(query);
+  const {data: masterCourses}=await fetchMasterCourses(query);
   return (
     <div className="w-full">
-      {/* <div className="mt-4 flex items-center justify-between">
-        <Search placeholder="Search courses..." />
-      </div> */}
+        <Master masterCourses={masterCourses}/>
         <Table courses={courses}/>
     </div>
   );
