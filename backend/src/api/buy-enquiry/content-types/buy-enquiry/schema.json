@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "buy_enquiries",
+  "info": {
+    "singularName": "buy-enquiry",
+    "pluralName": "buy-enquiries",
+    "displayName": "buy-enquiry"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "Email": {
+      "type": "email",
+      "required": true
+    },
+    "PhoneNo": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

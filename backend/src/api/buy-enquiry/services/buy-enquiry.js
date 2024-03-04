@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * revenue service
+ * buy-enquiry service
  */
 
 const { createCoreService } = require('@strapi/strapi').factories;
 
-module.exports = createCoreService('api::revenue.revenue');
+module.exports = createCoreService('api::buy-enquiry.buy-enquiry');

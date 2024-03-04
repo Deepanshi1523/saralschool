@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "counselling_requests",
+  "info": {
+    "singularName": "counselling-request",
+    "pluralName": "counselling-requests",
+    "displayName": "counselling-request"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "Email": {
+      "type": "email",
+      "required": true
+    },
+    "Phone_no": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "scholarship_enquiries",
+  "info": {
+    "singularName": "scholarship-enquiry",
+    "pluralName": "scholarship-enquiries",
+    "displayName": "Scholarship-enquiry"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "Email": {
+      "type": "email",
+      "required": true
+    },
+    "PhoneNo": {
+      "type": "string",
+      "required": true
+    },
+    "whyThisProgram": {
+      "type": "text",
+      "required": true
+    },
+    "currentAchievements": {
+      "type": "text",
+      "required": true
+    },
+    "resume_proposal": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

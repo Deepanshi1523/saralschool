@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "courses",
+  "collectionName": "master_courses",
   "info": {
-    "singularName": "course",
-    "pluralName": "courses",
-    "displayName": "Courses",
+    "singularName": "master-course",
+    "pluralName": "master-courses",
+    "displayName": "Master Course",
     "description": ""
   },
   "options": {
@@ -12,6 +12,15 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
     "Title": {
       "type": "string",
       "required": true,
@@ -22,23 +31,25 @@
       "default": 15,
       "required": true
     },
-    "rating": {
-      "type": "float",
-      "default": 5,
-      "required": true,
-      "max": 5,
-      "min": 0
-    },
     "cost": {
       "type": "biginteger",
       "required": true
     },
+    "rating": {
+      "type": "decimal",
+      "default": 5,
+      "max": 5,
+      "min": 0,
+      "required": true
+    },
     "numberOfClasses": {
       "type": "integer",
-      "required": true
+      "required": true,
+      "default": 25
     },
     "total_student": {
       "type": "biginteger",
+      "default": "150",
       "required": true
     },
     "isHeroCourse": {
@@ -46,25 +57,12 @@
       "default": false,
       "required": true
     },
-    "image": {
-      "type": "media",
-      "multiple": false,
-      "required": true,
-      "allowedTypes": [
-        "images",
-        "files"
-      ]
-    },
     "Scholarship": {
       "type": "integer",
+      "required": false,
       "default": 0,
       "max": 100,
       "min": 0
-    },
-    "isMasterCourse": {
-      "type": "boolean",
-      "default": false,
-      "required": true
     }
   }
 }
